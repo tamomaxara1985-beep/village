@@ -52,6 +52,10 @@ export async function login(state: FormState, formData: FormData): Promise<FormS
     return { message: 'Invalid email or password.' }
   }
 
+  if (!user.passwordHash) {
+    return { message: 'Invalid email or password.' }
+  }
+
   const passwordMatch = await bcrypt.compare(password, user.passwordHash)
   if (!passwordMatch) {
     return { message: 'Invalid email or password.' }
