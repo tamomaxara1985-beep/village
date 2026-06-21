@@ -34,8 +34,9 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${cormorant.variable} ${nunito.variable} h-full`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col antialiased">
+      <body className="min-h-full flex flex-col antialiased" suppressHydrationWarning>
         {children}
       </body>
     </html>

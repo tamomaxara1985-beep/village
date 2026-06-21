@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MapPin, Phone, Mail, Share2, Camera } from "lucide-react";
+import { CurrentYear } from "./CurrentYear";
 
 const quickLinks = [
   { href: "/cottages", label: "Cottages" },
@@ -99,7 +100,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-6 border-t border-brown-800 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-warm-300">
-          <span>© {new Date().getFullYear()} HOTEL_NAME. All rights reserved.</span>
+          <span>© <CurrentYear /> HOTEL_NAME. All rights reserved.</span>
           <span>Designed with warmth in HOTEL_CITY</span>
         </div>
       </div>

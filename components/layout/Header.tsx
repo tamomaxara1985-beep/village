@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import MobileNav from "./MobileNav";
+import MobileNavWrapper from "./MobileNavWrapper";
 
 const navLinks = [
   { href: "/about", label: "About" },
@@ -41,7 +41,7 @@ export default function Header() {
                 Book Now
               </Button>
             </Link>
-            <MobileNav links={navLinks} />
+            <MobileNavWrapper links={navLinks} />
           </div>
         </div>
       </div>
