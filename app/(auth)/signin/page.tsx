@@ -1,4 +1,5 @@
 'use client'
+import { Suspense } from 'react'
 import { useActionState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
@@ -8,7 +9,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
-export default function SigninPage() {
+function SigninContent() {
   const [state, action, pending] = useActionState(login, undefined)
   const searchParams = useSearchParams()
   const oauthError = searchParams.get('error') === 'oauth_failed'
@@ -78,5 +79,13 @@ export default function SigninPage() {
         </form>
       </CardContent>
     </Card>
+  )
+}
+
+export default function SigninPage() {
+  return (
+    <Suspense>
+      <SigninContent />
+    </Suspense>
   )
 }
