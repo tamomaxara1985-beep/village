@@ -84,7 +84,7 @@ export default function FaqPage() {
 
       {/* FAQ Accordion */}
       <section className="py-16 px-4 max-w-3xl mx-auto">
-        <Accordion type="single" collapsible className="space-y-3">
+        <Accordion className="space-y-3">
           {faqs.map((faq, i) => (
             <AccordionItem
               key={i}
